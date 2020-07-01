@@ -1,8 +1,12 @@
 import './App.css';
 import React, { Component } from 'react'
 import DrumPad from './components/DrumPad'
+import Display from './components/display/Display';
 
-const audioKit = [{
+export class App extends Component {
+
+  state = {
+    audioKit : [{
     keyCode: 81,
     keyTrigger: 'Q',
     id: 'Heater-1',
@@ -48,22 +52,27 @@ const audioKit = [{
     id: 'Closed-HH',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
   },
-];
-
-
-export class App extends Component {
-  playAudio = keyTrigger =>{
-    
+],
+display: "☠ ☠ ☠" 
+};
+  playAudio = keyCode =>{
+    const object = this.state.audioKit.filter(item => item.keyCode === keyCode)[0];
+    const audio = new Audio(object.url);
+    const display = object.id;
+    this.setState({display:display});
+    audio.play();
   }
+
   render() {
     return (
       <div id="drum-machine">
         <div id="drum-pad">
-          <DrumPad items={audioKit} playAudio={this.playAudio}/>
+          <DrumPad items={this.state.audioKit} playAudio={this.playAudio}/>
         </div>
+        <Display text={this.state.display}/>
       </div>
     )
   }
 }
 
-export default App
+export default App;

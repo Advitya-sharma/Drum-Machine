@@ -6,8 +6,7 @@ export class DrumPad extends Component {
         return (this.props.items.map(item =>(
         <Pads 
         keyCode={item.keyCode} 
-        title={item.keyTrigger} 
-        display={item.id} 
+        title={item.keyTrigger}
         playAudio={this.props.playAudio}/>)));
         }
         
