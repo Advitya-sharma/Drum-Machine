@@ -15,7 +15,8 @@ const padStyle = {
   class: "pad-item",
   backgroundColor: "pink",
   textAlign: "center",
-  borderRadius: "10px"
+  borderRadius: "10px",
+  border: "3px solid black"
 };
 
 export default pads;
