@@ -7,7 +7,7 @@ export class Display extends Component {
         <div id="welcome-text">{this.props.text}</div>
         <div id="intro-text">
           Enjoy the <br />
-          Drum-Machine🔥
+          Drum Machine🔥
         </div>
       </div>
     );

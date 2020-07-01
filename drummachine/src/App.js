@@ -2,7 +2,7 @@ import "./App.css";
 import React, { Component } from "react";
 import DrumPad from "./components/DrumPad";
 import Display from "./components/display/Display";
-import Contact from "./components/Contact";
+import Contact from "./components/contact/Contact";
 
 export class App extends Component {
   state = {

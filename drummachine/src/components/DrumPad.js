@@ -4,7 +4,7 @@ import Pads from './Pads'
 export class DrumPad extends Component {
     render() {
         return (this.props.items.map(item =>(
-        <Pads 
+        <Pads key={item.keyCode} 
         keyCode={item.keyCode} 
         title={item.keyTrigger}
         playAudio={this.props.playAudio}/>)));

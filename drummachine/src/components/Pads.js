@@ -4,7 +4,11 @@ export class pads extends Component {
   render() {
     const { title, keyCode } = this.props;
     return (
-      <div style={padStyle} onClick={this.props.playAudio.bind(this, keyCode)}>
+      <div
+        className="pad-item"
+        style={padStyle}
+        onClick={this.props.playAudio.bind(this, keyCode)}
+      >
         {title}
       </div>
     );
@@ -12,7 +16,6 @@ export class pads extends Component {
 }
 
 const padStyle = {
-  class: "pad-item",
   backgroundColor: "pink",
   textAlign: "center",
   borderRadius: "10px",
